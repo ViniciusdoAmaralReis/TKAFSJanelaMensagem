@@ -42,7 +42,7 @@ end;
 procedure TKAFSJanelaMensagem.KAFSJanelaMensagemConfig(const _cortema1, _cortema2: TAlphaColor; _titulo, _descricao, _botaoconfirmar: String; _confirmar: TNotifyEvent);
 begin
   // Configura cores e textos da tela padrão
-  KAFSJanelaModalConfig(_cortema1, _cortema2, _titulo, _botaoconfirmar);
+  KAFSJanelaModalConfig(_cortema1, _cortema2, _titulo, '💬', _botaoconfirmar);
 
   with LabDescricao do
   begin
