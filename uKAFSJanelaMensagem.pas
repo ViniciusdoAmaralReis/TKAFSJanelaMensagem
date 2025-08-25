@@ -5,7 +5,7 @@ interface
 uses
   System.Classes, System.UITypes, System.SysUtils,
   FMX.StdCtrls, FMX.Types,
-  UntKAFSJanelaModal;
+  uKAFSJanelaModal;
 
 type
   TKAFSJanelaMensagem = class(TKAFSJanelaModal)
