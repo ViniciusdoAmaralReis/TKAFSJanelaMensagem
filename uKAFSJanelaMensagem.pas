@@ -9,7 +9,7 @@ uses
 
 type
   TKAFSJanelaMensagem = class(TKAFSJanelaModal)
-    LabDescricao: TLabel;
+    labDescricao: TLabel;
   public
     Confirmar: TNotifyEvent;
 
@@ -26,8 +26,8 @@ constructor TKAFSJanelaMensagem.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
 
-  LabDescricao := TLabel.Create(Self);
-  with LabDescricao do
+  labDescricao := TLabel.Create(Self);
+  with labDescricao do
   begin
     Align := TAlignLayout.Client;
     Font.Family := 'Segoe UI Emoji';
@@ -44,7 +44,7 @@ begin
   // Configura cores e textos da tela padrão
   KAFSJanelaModalConfig(_cortema1, _cortema2, _titulo, '💬', _botaoconfirmar);
 
-  with LabDescricao do
+  with labDescricao do
   begin
     FontColor := _cortema1;
     Text := _descricao;
@@ -53,8 +53,8 @@ begin
   TThread.Synchronize(nil, procedure begin Visible := True; end);
 
   // Associa procedures aos botões
-  BtnVoltar.OnClick := Sair;
-  BtnConfirmar.OnClick := Confirmando;
+  btnVoltar.btnBotao.OnClick := Sair;
+  btnConfirmar.btnBotao.OnClick := Confirmando;
 
   // Assonia o evento que será executado depois da confirmação
   Confirmar := _confirmar;
@@ -74,8 +74,8 @@ end;
 
 destructor TKAFSJanelaMensagem.Destroy;
 begin
-  if Assigned(LabDescricao) then
-    FreeAndNil(LabDescricao);
+  if Assigned(labDescricao) then
+    FreeAndNil(labDescricao);
 
   inherited Destroy;
 end;
