@@ -13,7 +13,7 @@ type
   public
     Confirmar: TNotifyEvent;
 
-    constructor Create(AOwner: TComponent); override;
+    constructor Create(AOwner: TComponent); reintroduce;
     procedure KAFSJanelaMensagemConfig(const _cortema1, _cortema2: TAlphaColor; _titulo, _descricao, _botaoconfirmar: String; _confirmar: TNotifyEvent);
     procedure Confirmando(Sender: TObject);
     procedure Sair(Sender: TObject);
@@ -62,9 +62,9 @@ end;
 
 procedure TKAFSJanelaMensagem.Confirmando(Sender: TObject);
 begin
-  Confirmar(nil);
+  Confirmar(Sender);
 
-  Free;
+  Sair(Sender);
 end;
 
 procedure TKAFSJanelaMensagem.Sair(Sender: TObject);
@@ -74,8 +74,6 @@ end;
 
 destructor TKAFSJanelaMensagem.Destroy;
 begin
-  if Assigned(labDescricao) then
-    FreeAndNil(labDescricao);
 
   inherited Destroy;
 end;
