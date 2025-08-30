@@ -31,7 +31,7 @@ begin
   begin
     Align := TAlignLayout.Client;
     Font.Family := 'Segoe UI Emoji';
-    Font.Size := 24;
+    Font.Size := 20;
     Font.Style := [];
     Parent := Self;
     StyledSettings := [];
